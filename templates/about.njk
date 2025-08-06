@@ -1,0 +1,105 @@
+{% extends "base.njk" %}
+
+{% block title %}About Us - SkillNest{% endblock %}
+
+{% block styles %}
+<style>
+  body {
+    background-image: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 60px 20px;
+    min-height: 100vh;
+  }
+
+  h1, h3 {
+    font-weight: bold;
+  }
+
+  .card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+  }
+
+  footer {
+    background-color: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    padding: 15px 0;
+    color: #ddd;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .nav-buttons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="overlay">
+  <div class="container text-center">
+    <h1 class="mb-4">About SkillNest</h1>
+    <p class="lead mb-5">
+      SkillNest is your digital hub for discovering, mastering, and
+      showcasing talents. From culinary artistry to tech wizardry, SkillNest
+      empowers creators to shine.
+    </p>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-4 h-100 text-white">
+          <h3>💡 Our Vision</h3>
+          <p>
+            To build a creative community where passion meets opportunity.
+            Whether you're a hobbyist or a professional, SkillNest helps you
+            grow and get noticed.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4 h-100 text-white">
+          <h3>🚀 Our Mission</h3>
+          <p>
+            To provide a platform where users can publish, explore, and
+            learn skills interactively — from quick videos to step-by-step
+            guides.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4 h-100 text-white">
+          <h3>🤝 Community Driven</h3>
+          <p>
+            SkillNest thrives on feedback, sharing, and mentorship. Every
+            feature is crafted with love by creators, for creators.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="index.html" class="btn btn-outline-light">← Back to Home</a>
+      <a href="contact.html" class="btn btn-outline-light">Move to Contact Page →</a>
+    </div>
+  </div>
+</div>
+
+<footer>&copy; 2025 SkillNest. Empowering Creativity & Growth.</footer>
+{% endblock %}

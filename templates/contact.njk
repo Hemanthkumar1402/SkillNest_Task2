@@ -1,0 +1,106 @@
+{% extends "base.njk" %}
+
+{% block title %}Contact | SkillNest{% endblock %}
+
+{% block styles %}
+<style>
+  body {
+    margin: 0;
+    padding-top: 30px;
+    background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80")
+      no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    min-height: 100vh;
+    padding: 80px 20px;
+  }
+
+  .form-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    max-width: 700px;
+    margin: auto;
+  }
+
+  label {
+    color: #ddd;
+  }
+
+  footer {
+    background-color: #111;
+    text-align: center;
+    padding: 20px;
+    color: #aaa;
+    margin-top: 40px;
+  }
+
+  .contact-info {
+    margin-top: 40px;
+    color: #ccc;
+  }
+
+  .contact-info a {
+    color: #00ffff;
+    text-decoration: none;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="overlay">
+  <div class="form-container">
+    <form>
+      <div class="mb-3">
+        <label for="name">Your Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your name" />
+      </div>
+      <div class="mb-3">
+        <label for="email">Your Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" />
+      </div>
+      <div class="mb-3">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
+      </div>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-info text-dark fw-bold">Send Message</button>
+      </div>
+    </form>
+
+    <div class="contact-info mt-5">
+      <h5>
+        📧 Email:
+        <a href="mailto:k.hemanth114@gmail.com">k.hemanth1214@gmail.com</a>
+      </h5>
+      <h5>📞 Phone: <a href="tel:+918712871402">8712871402</a></h5>
+      <h5>
+        💼 LinkedIn:
+        <a href="https://www.linkedin.com/in/hemanth-kumar-kathulapuram-2091bb210/" target="_blank">Hemanth Kumar</a>
+      </h5>
+      <h5>
+        📝 Resume:
+        <a href="https://drive.google.com/file/d/1JITDaCamBYKbqfBIZEj0lzdPLIL2X32x/view?usp=drivesdk" target="_blank">View PDF</a>
+      </h5>
+      <h5>
+        💻 GitHub:
+        <a href="https://github.com/Hemanthkumar1402" target="_blank">Hemanthkumar1402</a>
+      </h5>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="index.html" class="btn btn-outline-info">⬅ Back to Home</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p class="mb-0">&copy; 2025 K.Hemanth Kumar | SkillNest</p>
+</footer>
+{% endblock %}
