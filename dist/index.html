@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillNest | Learn a Skill in 5 Minutes</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding-top: 70px;
+        background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80")
+          no-repeat center center fixed;
+        background-size: cover;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+      }
+
+      .overlay {
+        background-color: rgba(0, 0, 0, 0.75);
+        min-height: 100vh;
+        padding: 60px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        color: cyan;
+      }
+
+      .header p {
+        font-size: 1.25rem;
+        color: #ccc;
+      }
+
+      .skill-card {
+        margin-top: 40px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 40px;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+        width: 100%;
+        max-width: 600px;
+      }
+
+      .skill-name {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #00ffff;
+        margin-bottom: 15px;
+      }
+
+      .tip {
+        font-size: 1.1rem;
+        color: #ddd;
+        margin-bottom: 25px;
+      }
+
+      .btn-refresh {
+        margin-top: 20px;
+        font-weight: bold;
+        background-color: #00ffff;
+        border: none;
+        color: #000;
+      }
+
+      footer {
+        background-color: rgba(0, 0, 0, 0.85);
+        text-align: center;
+        padding: 20px 0;
+        color: #aaa;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">SkillNest</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay">
+      <div class="header mb-4">
+        <h1>SkillNest</h1>
+        <p>Master trending skills in just 5 minutes a day ✨</p>
+      </div>
+
+      <div class="skill-card">
+        <div id="skillName" class="skill-name">Git & GitHub</div>
+        <div id="tip" class="tip">
+          Version control is a must-have skill for every developer.
+        </div>
+        <div id="resource" class="link">
+          <a
+            href="https://www.youtube.com/watch?v=RGOj5yH7evk"
+            target="_blank"
+            class="btn btn-outline-light"
+            >Watch Intro Video</a
+          >
+        </div>
+        <button onclick="generateSkill()" class="btn btn-refresh mt-3">
+          Show Me Another Skill
+        </button>
+      </div>
+    </div>
+
+    <footer>
+      <p class="mb-0">&copy; 2025 K.Hemanth Kumar | SkillNest</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const skills = [
+        {
+          name: "Git & GitHub",
+          tip: "Version control is a must-have skill for every developer.",
+          link: "https://www.youtube.com/watch?v=RGOj5yH7evk",
+        },
+        {
+          name: "Responsive Design",
+          tip: "Design for all screen sizes using Flexbox and media queries.",
+          link: "https://www.youtube.com/watch?v=srvUrASNj0s",
+        },
+        {
+          name: "JavaScript ES6",
+          tip: "Master arrow functions, destructuring, and more!",
+          link: "https://www.youtube.com/watch?v=NCwa_xi0Uuc",
+        },
+        {
+          name: "Node.js Basics",
+          tip: "Learn how to build backend servers using JavaScript.",
+          link: "https://www.youtube.com/watch?v=TlB_eWDSMt4",
+        },
+        {
+          name: "UI/UX Design",
+          tip: "Good design solves problems. Learn how to design for users.",
+          link: "https://www.youtube.com/watch?v=_QEc9z0q5kU",
+        },
+        {
+          name: "Python for Beginners",
+          tip: "Great starting point for automation, AI, and backend.",
+          link: "https://www.youtube.com/watch?v=rfscVS0vtbw",
+        },
+        {
+          name: "Web3 & Blockchain",
+          tip: "The next big thing! Learn the basics of decentralized apps.",
+          link: "https://www.youtube.com/watch?v=gyMwXuJrbJQ",
+        },
+      ];
+
+      function generateSkill() {
+        const random = skills[Math.floor(Math.random() * skills.length)];
+        document.getElementById("skillName").innerText = random.name;
+        document.getElementById("tip").innerText = random.tip;
+        document.getElementById("resource").innerHTML = `
+          <a href="${random.link}" target="_blank" class="btn btn-outline-light">
+            Watch Intro Video
+          </a>`;
+      }
+    </script>
+  </body>
+</html>
